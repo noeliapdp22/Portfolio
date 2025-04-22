@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Limelight&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+}
+body{
+    background-color: rgb(79, 149, 189);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    flex: 1 0 auto;
+}
+
+header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    color: rgb(36, 60, 104);
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: rgb(255, 160, 122);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+header .logo:hover{
+    color: rgb(255, 160, 122);
+    background: rgb(36, 60, 104);
+    transition: 1s;
+}
+
+
+header .navbar{
+    position: relative;
+    display: flex;
+}
+header .navbar li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navbar li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+header .navbar li .dropdown {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 50;
+    background-color: #092c4d;
+    padding: 10px 0;
+    z-index: 1000;
+    min-width: 160px;
+    border-radius: 8px;
+}
+header .navbar li .dropdown li {
+    margin: 0;
+}
+header .navbar li .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: white;
+}
+header .navbar li:hover .dropdown {
+    display: block;
+}
+
+header .navbar li a:hover{
+    border-bottom: 5px solid rgb(255, 160, 122);
+    padding: 2px;
+}
+
+/*Contenido de la web*/
+.contenido{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.contenido .tituloBox{
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contenido .tituloBox h2{
+    font-size: 2.1em;
+    text-transform: uppercase;
+    color: white;
+    padding-bottom: 0.5em;
+}
+
+.contenido .tituloBox h2 span{
+    background: rgb(255, 160, 122);
+    color: rgb(36, 60, 104);
+    padding: 0px 10px;
+    font-weight: 500;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+.contenido .tituloBox p{
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: "Lexend Deca", sans-serif;
+
+}
+
+.contenido .tituloBox a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(36, 60, 104);
+    background: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin: left 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.contenido .tituloBox a:hover{
+    color: #fff;
+    background-color: rgb(255, 160, 122);
+    transition: 0.5s;
+}
+
+/*Image*/
+.contenido .imgBox{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: -10px;
+    z-index: -5;
+    
+}
+
+.contenido .imgBox img{
+    height: 80vh;
+}
+
+.contenido .imgBox img:hover{
+    height: 80vh;
+}
+body > section {
+    flex: 1;
+}
+
+
+/*Circulo*/
+.circulo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(2, 112, 108, 0.386);
+    clip-path: circle(650px at right 800px);
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+}
+
+/*----------------------------------------------*/
+/*About me*/
+.aboutme{
+    background-color: rgba(2, 112, 108, 0.386);
+}
+.tittle{
+    font-family: "Limelight", sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 1em;
+    padding-bottom: 2em;
+    font-size: 5em;
+}
+.text{
+    background-color: #e0e0e0;
+    border-radius: 0px 20px 20px;
+    padding: 10px;
+    margin: 1em;
+    font-size: 1.5em;
+}
+.cv{
+    background-color: rgba(255, 160, 122, 0.781);
+    border-radius: 300px;
+    padding: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 5em;
+}
+.cv a{
+    text-decoration: none;
+    color: rgb(36, 60, 104);
+    
+}
+.cv:hover{
+    background: rgb(36, 60, 104);
+    
+}
+.cv:hover a{
+   color: rgba(255, 160, 122, 0.781);
+}
+/*This is to invert the color to white instead of black when we pass the mouse above*/
+.cv .download:hover{
+    filter: invert(1);
+}
+
+/*Circle*/
+.circulo2{
+    position: absolute;
+    background: rgba(255, 160, 122, 0.781);
+    clip-path: circle(650px at left 1050px);
+    width: 100%;
+    height: 100%;
+}
+/*----------------------------------------------*/
+/*Skills*/
+.skills {
+    font-family: "Limelight", sans-serif;
+    background-image: url(img/beigeBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.3);
+    border-radius: 400px;
+    gap: 20px; /*This is to make space between all progress bar*/
+}
+
+  
+.skills h2 {
+    font-family: "Limelight", sans-serif;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 5em;
+    text-transform: uppercase;
+    text-align: center; 
+}
+
+.skill span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #202020;
+    padding: 2em;
+}
+  
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 50px;
+    display: block;
+    margin: 20px ;
+}
+  
+.progress {
+    height: 100%;
+    background-color: rgb(36, 60, 104);
+    
+}
+
+
+/*Footer*/
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    position: relative;
+}
+
+footer .redesSociales {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding-right: 10px;
+}
+/*Copyright*/
+.copyright{
+    position: absolute;
+    bottom: 0px;
+    left: 400px;
+    margin-bottom: auto;
+    padding: 0 100px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Limelight", sans-serif;
+}
+
+.copyright p{
+    color: white;
+    text-align: center;
+    margin-left: 100px;
+}
+
+/*Redes sociales*/
+
+.redesSociales{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.redesSociales li{
+    padding: 10px;
+}
+
+.redesSociales li a{
+    color: #fff;
+    font-size: 2.5em;
+    transition: 0.3s;
+}
+.redesSociales li:hover a{
+    color: rgb(255, 160, 122);
+}
