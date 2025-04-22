@@ -340,7 +340,7 @@ footer .redesSociales {
     margin-left: 100px;
 }
 
-/*Redes sociales*/
+/*Social media*/
 
 .redesSociales{
     position: absolute;
@@ -362,4 +362,58 @@ footer .redesSociales {
 }
 .redesSociales li:hover a{
     color: rgb(255, 160, 122);
+}
+
+/*Survey form, contact me*/
+.survey-form{
+    box-sizing: border-box;
+    margin: 0;
+    /*background*/
+}
+
+.survey-form h1{
+    font-family: "Limelight", sans-serif;
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(36, 60, 104);
+    font-size: 48px;
+}
+.contenedor{
+    width: 100%;
+    padding: 15px;
+
+}
+.formulario{
+    background: #fff;
+    margin-top: 100px;
+}
+
+input[type="text"], input[type="email"]{
+    text-align: center;
+    font-size: 24px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 2px solid rgb(211, 131, 99);
+}
+.button{
+    border: none;
+    width: 100%;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(211, 131, 99);
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color:rgb(36, 60, 104);
+    color: rgb(245, 151, 113);
+}
+
+@media (max-width: 768px){
+
 }
