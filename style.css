@@ -328,6 +328,7 @@ header .navbar li a:hover{
 }
 /*----------------------------------------------*/
 /*Skills*/
+/* 
 .skills {
     font-family: "Limelight", sans-serif;
     background-image: url(img/beigeBackground.jpg);
@@ -335,7 +336,7 @@ header .navbar li a:hover{
     background-size: cover;
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.3);
     border-radius: 400px;
-    gap: 20px; /*This is to make space between all progress bar*/
+    gap: 20px; /*This is to make space between all progress bar
 }
 
   
@@ -373,7 +374,7 @@ header .navbar li a:hover{
     background-color: rgb(36, 60, 104);
     
 }
-
+*/
 /*-----------------------------------------------------*/
 /*Flip card Proyects*/
 .proyects{
