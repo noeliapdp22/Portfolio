@@ -75,8 +75,13 @@
             <p>Let’s build something great together!</p>
         </div>
         <div class="cv">
-          <img src="img/download.png" class="download" alt="download"><a href="sources/CV_Noelia_Prieto_del_Puerto.pdf" download>Download CV</a>
-        </div>
+          <a href="sources/CV_Noelia_Prieto_del_Puerto.pdf" download class="cv-boton">
+              <div class="cv-circulo">
+                  <img src="img/download.png" class="download" alt="download">
+              </div>
+              <span class="cv-texto">Download CV</span>
+          </a>
+      </div>
         <div class="circulo2"></div>
     </section>
 
@@ -130,9 +135,26 @@
           </section>
           
     </section>
-    <section id="proyects">
 
+    <section id="proyects" class="proyects">
+      <div class="card">
+        <!--Front part from the card-->
+        <div class="face front">
+          <img src="img/survey-proyect.png" alt="survey-proyect">
+          <h3>Survey-Form</h3>
+        </div>
+
+          <!--Back part from the card-->
+          <div class="face back">
+            <h3>Survey-Form</h3>
+            <p>This is my first project as part of my web development journey. 
+              It is a simple survey form that gathers information about users' reading habits. 
+              I created this form using HTML and CSS to practice building forms and styling them effectively.</p>
+            <div class="link"><a href="https://survey-form-bice-gamma.vercel.app/" target="_blank">Go to Website</a></div>
+        </div>
+      </div>
     </section>
+
     <section id="survey-form" class="survey-form">
       <form class="formulario">
         <h1>Contact me</h1>

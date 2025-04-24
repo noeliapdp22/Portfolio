@@ -4,16 +4,16 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /*This makes the design more controlled*/
     font-family: "Lexend Deca", sans-serif;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 body{
     background-color: rgb(79, 149, 189);
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 100vw;
     overflow-x: hidden; /* Prevents horizontal scrolling when zooming */
 }
 section{
@@ -24,7 +24,7 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 7em;
+    padding: 7em 2em;
     flex: 1 0 auto;
 }
 
@@ -38,6 +38,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(36, 60, 104);
 }
 
 header .logo{
@@ -53,7 +54,7 @@ header .logo{
 
 header .logo:hover{
     color: rgb(255, 160, 122);
-    background: rgb(36, 60, 104);
+    background: rgb(79, 149, 189);
     transition: 1s;
 }
 
@@ -65,7 +66,7 @@ header .navbar{
 }
 header .navbar li{
     list-style: none;
-    margin-left: 1em;
+    margin: 0 0 0 1em;
 }
 
 header .navbar li a{
@@ -83,7 +84,7 @@ header .navbar li .dropdown {
     display: none;
     position: absolute;
     top: 150%;
-    left: 50;
+    left: 25%;
     background-color: #092c4d;
     padding: 0.7em 0;
     z-index: 1000;
@@ -112,7 +113,7 @@ header .navbar li a:hover{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1em;
 }
@@ -154,7 +155,7 @@ header .navbar li a:hover{
     color: rgb(36, 60, 104);
     background: rgb(255, 255, 255);
     padding: 0.5em 0.7em;
-    margin: left 2%;
+    margin: 2%;
     border-radius: 1rem;
     letter-spacing: 3%;
     transition: 0.5s;
@@ -181,14 +182,8 @@ header .navbar li a:hover{
 }
 
 .contenido .imgBox img{
-    height: 80vh;
-}
-
-.contenido .imgBox img:hover{
-    height: 80vh;
-}
-body > section {
-    flex: 1;
+    max-width: 100%;
+    height: auto;   
 }
 
 /*Social media in home page*/
@@ -218,7 +213,7 @@ body > section {
 .buttonHome{
     background-color: rgb(255, 160, 122);
     border-radius: 50%;
-    position:fixed;
+    position:fixed; /*fixed- so that it is always visible*/
     top: 90%;
     right: 3%;
     transform: translateY(-50%); /*This makes it always be above the other objects*/
@@ -235,10 +230,9 @@ body > section {
 /*Circulo*/
 .circulo{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    
     background: rgba(2, 112, 108, 0.386);
-    clip-path: circle(650px at right 800px);
+    clip-path: circle(30vw at right 80vh);
     width: 100%;
     height: 100%;
     z-index: -1000;
@@ -256,55 +250,81 @@ body > section {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-left: 0%;
-    margin-right: 5%;
+    text-align: center;
+    margin: 0 auto;
     padding-bottom: 2em;
     font-size: 5em;
 }
 .text{
     background-color: #e0e0e0;
     border-radius: 0px 20px 20px;
-    padding: 10px;
+    padding: 0.8em;
     margin: 1em;
     font-size: 1.5em;
     position: relative;
     display: inline-block;
+    
 }
-.cv{
+.cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.cv-boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.cv-circulo {
     background-color: rgba(255, 160, 122, 0.781);
-    border-radius: 300px;
-    padding: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    margin-left: 5em;
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
-.cv a{
-    text-decoration: none;
+
+.cv-circulo img {
+    width: 3em;
+    height: auto;
+}
+
+.cv-boton:hover .cv-circulo {
+    background-color: rgb(36, 60, 104);
+    transform: scale(1.05);
+}
+
+.cv-texto {
+    margin-top: 1em;
     color: rgb(36, 60, 104);
-    
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
-.cv:hover{
-    background: rgb(36, 60, 104);
-    
+
+.cv-boton:hover .cv-texto {
+    color: rgba(255, 160, 122, 0.781);
 }
-.cv:hover a{
-   color: rgba(255, 160, 122, 0.781);
-}
-/*This is to invert the color to white instead of black when we pass the mouse above*/
-.cv .download:hover{
-    filter: invert(1);
-}
+
 
 /*Circle*/
 .circulo2{
     position: absolute;
     background: rgba(255, 160, 122, 0.781);
-    clip-path: circle(650px at left 1050px);
+    clip-path: circle(30vw at left 100vh);
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -1000; /*Being negative, it sends it behind the objects*/
 }
 /*----------------------------------------------*/
 /*Skills*/
@@ -353,6 +373,95 @@ body > section {
     background-color: rgb(36, 60, 104);
     
 }
+
+/*-----------------------------------------------------*/
+/*Flip card Proyects*/
+.proyects{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+    background: #092c4d;
+}
+
+.card{
+    position: relative;
+    width: 18em;
+    height: 21em;
+}
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*Determines whether the back face of an element is visible to the user.
+    The back face of an element is always a transparent background, allowing,
+    when visible, a mirror image of the front face to be displayed.
+    Has the visible property: meaning the back face is visible,
+    allowing the front face to be displayed inverted.
+    Hidden: meaning the back face is not visible, hiding the front face.*/
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow:hidden;
+    transition: 0.5s;
+}
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0px 5px 10px #000;
+}
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*Indicates how the content of an element should be resized to fit its container.*/
+    object-fit: cover;
+}
+.card .front h3{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: #000;
+    text-align: center;
+}
+.card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0px 5px 10px #000;
+}
+.card .back .link{
+    border-top: 1px solid #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+.card .back .link a{
+    color: #f3f3f3;
+}
+.card .back h3{
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    
+} 
+.card .back p{
+    letter-spacing: 1px;
+
+}
+.card:hover .front{
+    transform: perspective(600px)rotateY(180deg);
+}
+.card:hover .back{
+    transform: perspective(600px)rotateY(360deg);
+}
+/*-------------------------------------------------------*/
 /*Survey form, contact me*/
 .survey-form{
     box-sizing: border-box;
@@ -464,6 +573,12 @@ footer .redesSociales {
 }
 
 /*Responsive for a phone*/
+@media (max-width: 992px) {
+    .tittle {
+      font-size: 3em;
+    }
+}
+
 @media (max-width: 768px){
     .formulario{
         margin-top: 150px;
@@ -471,18 +586,25 @@ footer .redesSociales {
         margin: auto;
         border-radius: 2%;
     }
+    .redesSocialesHome {
+        top: auto;
+        bottom: 2%;
+        right: 2%;
+        flex-direction: row;
+      }
 }
 
-@media (max-width: 1200px) {
-    .tittle {
-      font-size: 3em;
-    }
-}
-  @media (max-width: 768px) {
+@media (max-width: 576px) {
     .contenido {
       flex-direction: column;
       padding: 2em;
     }
+    .buttonHome {
+        right: 1em;
+        bottom: 1em;
+        top: auto;
+        transform: none;
+      }
   }
   
 
