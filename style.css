@@ -389,6 +389,7 @@ header .navbar li a:hover{
     position: relative;
     width: 18em;
     height: 21em;
+    margin: 20px;
 }
 .card .face{
     position: absolute;
