@@ -271,7 +271,7 @@ header .navbar li a:hover{
     font-size: 5em;
 }
 .text{
-    background-color: #e0e0e0;
+    background-color: #fff;
     border-radius: 0px 20px 20px;
     padding: 0.8em;
     margin: 1em;
@@ -341,55 +341,69 @@ header .navbar li a:hover{
     height: 100%;
     z-index: -1000; /*Being negative, it sends it behind the objects*/
 }
-/*----------------------------------------------*/
-/*Skills*/
-/* 
-.skills {
+/************************************************************************/
+/* — CV SECTION — */
+.cv-section {
+    background-color: rgba(2, 112, 108, 0.386);
+    display: block;            
+    min-height: auto;         
+    padding: 4em 2em;       
+  }
+  .cv-box {
+    background-color: #fff;
+    max-width: 800px;      
+    margin: 0 auto;        
+    padding: 2em;          
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 1em;
     font-family: "Limelight", sans-serif;
-    background-image: url(img/beigeBackground.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.3);
-    border-radius: 400px;
-    gap: 20px; /*This is to make space between all progress bar
-}
+    font-size: 4em;
+  }
+  .cv-item {
+    border-left: 3px solid rgb(255, 160, 122);
+    padding:1em;
+    margin: 1em;
+    font-size: 1em;
+  }
+  .cv-item ul {
+    margin: 0 0 1em 1.2em;
+    list-style: none;
 
+  }
+  .cv-item ul li {
+    margin-bottom: 2em;
+  }
+  .cv-box .cv-item h3 {
+    margin-bottom: 0.4em;
+    font-family: "Limelight", sans-serif;
+    font-size: 2em;
+  }
   
-.skills h2 {
-    font-family: "Limelight", sans-serif;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 5em;
-    text-transform: uppercase;
-    text-align: center; 
-}
-
-.skill span {
-    display: block;
+ /* SKILSS */
+  .skill-bar {
+    margin: 2em 5em;
+  }
+  .skill-bar .skill-name {
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #202020;
-    padding: 2em;
-}
-  
-.progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 50px;
+    color: rgb(36, 60, 104);
+    margin-bottom: 0.3em;
     display: block;
-    margin: 20px ;
-}
-  
-.progress {
+  }
+  .skill-bar .progress {
+    background: rgba(36, 60, 104, 0.2);
+    border-radius: 0.4em;
+    height: 0.8em;
+  }
+  .skill-bar .progress-fill {                       
     height: 100%;
-    background-color: rgb(36, 60, 104);
-    
-}
-*/
+    background: rgb(255, 160, 122);
+  }
+  
+  
 /*-----------------------------------------------------*/
 /*Flip card Proyects*/
 .proyects{
@@ -590,42 +604,34 @@ footer .redesSociales {
 }
 /******************************************************************************/
 /*MEDIA QUERIES*/
-
-
-@media (max-width: 768px){
-    .formulario{
-        margin-top: 150px;
-        width: 500px;
-        margin: auto;
-        border-radius: 2%;
-    }
-    .redesSocialesHome {
-        top: auto;
-        bottom: 2%;
-        right: 2%;
-        flex-direction: row;
-      }
-}
-
 @media (max-width: 576px) {
-    .contenido {
-      flex-direction: column;
-      padding: 2em;
+    .cv-section {
+      padding: 2em 0.5em;
     }
-    .buttonHome {
-        right: 1em;
-        bottom: 1em;
-        top: auto;
-        transform: none;
-      }
+    .cv-box {
+      padding: 1em;
+      width: 95%;
+    }
+    .cv-box .section-title {
+      font-size: 1.8em;
+      margin-bottom: 0.6em;
+    }
+    .cv-box .cv-item {
+      padding-left: 0.6em;
+      margin-bottom: 0.8em;
+    }
+    .cv-box .cv-item ul {
+      margin: 0 0 0.6em 1em;
+    }
   }
   
+  /*
   @media(max-width: 992px){
     .tittle {
         font-size: 3em;
       }
     nav{
-        justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles*/
+        justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles
     }
     .drawer{
         display: block;
@@ -659,5 +665,5 @@ footer .redesSociales {
     footer {
         text-align: center;
     }
+} */
 
-}

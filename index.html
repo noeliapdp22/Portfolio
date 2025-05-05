@@ -6,12 +6,12 @@
     <!-- Icon library from https://ionic.io -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
 </head>
 
 <body>
+  <!--HOME-->
     <section id="home">
         <div class="circulo"></div>
         <header>
@@ -19,11 +19,11 @@
           <label for="ckbox" class="drawer">
             <ion-icon name="menu-outline" size="large"></ion-icon>
           </label>
-          
+
             <a href="#" class="logo">Noelia Prieto del Puerto</a>
             <ul class="navbar">
                 <li><a href="#aboutme">About Me</a></li>
-                <li><a href="#resume">Resume</a>
+                <li><a href="#cv">Resume</a>
                 <ul class="dropdown">
                   <li><a href="#skills">Skills</a></li>
                   <li><a href="#experience">Experience</a></li>
@@ -64,11 +64,9 @@
             </a>
           </li>
         </ul>
-
-        
-
     </section>
 
+    <!--ABAOUT ME-->
     <section id="aboutme" class="aboutme">
         <h2 class="tittle">About me</h2>
         <div class="text">
@@ -90,57 +88,97 @@
         <div class="circulo2"></div>
     </section>
 
-    <!--Skils-->
-    <section id="resume">
-        <!--<section class="skills" id="skills">
-            <h2>My Skills</h2>
-          
-            <div class="skill">
-              <span>HTML</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%;"></div>
+    <section id="cv" class="cv-section">
+      <div class="cv-box">
+        <h2 class="section-title">Resume</h2>
+    
+        <div class="cv-item">
+          <h3>Contact</h3>
+          <ul>
+            <li>Email: noeliapdp22@gmail.com</li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/noelia-prieto-del-puerto" target="_blank">linkedin.com/in/noelia-prieto-del-puerto</a></li>
+            <li>GitHub: <a href="https://github.com/noeliapdp22" target="_blank">github.com/noeliapdp22</a></li>
+          </ul>
+        </div>
+    
+        <div id="skills" class="cv-item">
+          <h3>Skills</h3>
+            <div class="skill-bar">
+              <span class="skill-name">HTML</span>
+              <div class="progress">
+                <div class="progress-fill" style="width: 90%"></div>
               </div>
             </div>
-          
-            <div class="skill">
-              <span>CSS</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%;"></div>
+            <div class="skill-bar">
+              <span class="skill-name">CSS</span>
+              <div class="progress">
+                <div class="progress-fill" style="width:80%"></div>
               </div>
             </div>
-          
-            <div class="skill">
-              <span>JavaScript</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 20%;"></div>
+            <div class="skill-bar">
+              <span class="skill-name">JavaScript</span>
+              <div class="progress">
+                <div class="progress-fill" style="width:60%"></div>
               </div>
             </div>
-          
-            <div class="skill">
-              <span>MySQL</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%;"></div>
+            <div class="skill-bar">
+              <span class="skill-name">Java</span>
+              <div class="progress">
+                <div class="progress-fill" style="width:50%"></div>
               </div>
             </div>
+            <div class="skill-bar">
+              <span class="skill-name">MySQL</span>
+              <div class="progress">
+                <div class="progress-fill" style="width:70%"></div>
+              </div>
+            </div>
+        </div>
 
-            <div class="skill">
-              <span>Java</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 60%;"></div>
-              </div>
-            </div>
-            
-            <div class="skill">
-              <span>Python</span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 10%;"></div>
-              </div>
-            </div>
-          
-          </section>-->
-          
+    
+        <div class="cv-item" id="experience">
+          <h3>Experience</h3>
+          <ul>
+            <li><strong>Personal Web Projects</strong> (2024 – Present)<br>
+              • Built a responsive portfolio site in <em>HTML5</em> and <em>CSS3</em><br>
+              • Created a “Survey-Form” app using semantic HTML and CSS animations<br>
+              • Developed static theme pages (“Breaking Bad” & “Street Fighter”) to practice CSS transitions and image optimization.
+            </li>
+            <li><strong>Full-Stack Web Development Bootcamp</strong> (Coursera, 2025)<br>
+              
+            </li>
+            <li>
+              <strong>Room Leader</strong> (Belgrave Montessori School, 2024)<br>
+              • Managed daily activities and team coordination, strengthening organizational skills.<br>
+              • Communicated with families and staff, honing written and verbal communication.
+            </li>
+            <li>
+              <strong>Barista</strong> (Café La Estación, 2019 – 2024)<br>
+              • Provided customer service in a fast-paced environment, developing attention to detail.<br>
+              • Handled cash and inventory tracking, demonstrating reliability and responsibility.
+            </li>
+          </ul>
+        </div>
+    
+        <div class="cv-item" id="studies">
+          <h3>Education</h3>
+          <ul>
+            <li><strong>Higher Diploma in Cross-platform application development</strong> – UNIR (2024 – Present)<br>
+              • Coursework: Java, JavaScript, MySQL, REST API design, Git/GitHub workflows.
+            </li>
+            <li><strong>The Complete Full-Stack Web Development Bootcamp</strong> – Coursera (2025)<br>
+              • Covered HTML, CSS, JavaScript, React, Node.js, Express, and database integration.
+            </li>
+            <li>
+              <strong>Bachelor’s Degree in Primary Education</strong> – Universidad Rey Juan Carlos (2019 – 2023)<br>
+            </li>
+          </ul>
+        </div>
+    
+      </div>
     </section>
-
+    
+    <!--PROYECTS-->
     <section id="proyects" class="proyects">
       <div class="card">
         <!--Front part from the card-->
@@ -188,6 +226,7 @@
       </div>
     </section>
 
+    <!--SURVEY-FORM-->
     <section id="survey-form" class="survey-form">
       <form class="formulario">
         <h1>Contact me</h1>
@@ -213,6 +252,7 @@
       </form>
     </section>
 
+    <!--FOOTER-->
     <footer>
       <div class="copyright">
         <p>&copy; Personal Website created by Noelia</p>
