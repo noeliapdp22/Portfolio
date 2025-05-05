@@ -39,7 +39,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(36, 60, 104);
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 header .logo {
@@ -564,7 +564,7 @@ footer .redesSociales {
 .copyright {
   bottom: 0px;
   position: static;
-  margin: 0.5em 0; 
+  margin: 0.5em 0;
   margin-bottom: auto;
   padding: 0;
   display: flex;
@@ -606,26 +606,15 @@ footer .redesSociales {
 /*MEDIA QUERIES*/
 
 @media (max-width: 1120px) {
-}
-@media (max-width: 992px) {
-  .tittle {
-    font-size: 3em;
+  .tituloBox {
+    margin-top: 5%;
   }
-  /*Espacio de las letras con el header*/
-  .contenido {
-    padding-top: 5em; 
-  }
-  section{
-    padding-top: 4em;
-  }
-  nav {
-    justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles*/
-  }
-  /*Mostrar icono hamburguesa*/
-  header .navbar{
+
+  header .navbar {
     display: none; /*Ocultamos la linea horizontal del header y navegador*/
   }
-   header .drawer {
+  /*Mostrar icono hamburguesa*/
+  header .drawer {
     display: block;
     z-index: 2000;
   }
@@ -639,25 +628,24 @@ footer .redesSociales {
   }
   /*Al hacer check, enseña el menú vertical justo bajo el header*/
   #ckbox:checked ~ .navbar {
-    left: 0;
-    right: auto;
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 100%;
-    width: 100%;
-    background-color: rgb(36,60,104);
-    padding: 1em 0;
+    left: 0;
+    background-color: rgb(36, 60, 104);
+    display: flex;
+    flex-direction: column;
+    width: max-content; /* ajusta el ancho al contenido */
+    padding: 0.5em 1em;
     z-index: 2000;
   }
   /*Estilo de cada enlace*/
-  header .navbar li a{
+  header .navbar li a {
     display: block;
     color: white;
     padding: 0.75em 1em;
-    border-bottom: 1px solid rgba(255,160,122,0.3);
+    border-bottom: 1px solid rgba(255, 160, 122, 0.3);
   }
-    /*Dropdown para que sea clicable en movil*/
+  /*Dropdown para que sea clicable en movil*/
   header .navbar li .dropdown {
     display: block;
     position: static;
@@ -666,43 +654,135 @@ footer .redesSociales {
     margin: 0 0 0 1em;
   }
   .navbar li a:hover {
-    background-color: rgb(255, 160, 122); 
-    color: rgb(36, 60, 104);              
+    background-color: rgb(255, 160, 122);
+    color: rgb(36, 60, 104);
   }
 
   /*Espacio para la imagen, así no está tan pegado a las letras */
   .contenido .imgBox {
     margin-top: 4em;
     margin-bottom: 3em;
-  } 
+  }
+}
+
+@media (max-width: 992px) {
+  .tituloBox {
+    margin-top: 5%;
+  }
+  /*Espacio de las letras con el header*/
+  .contenido {
+    padding-top: 3em;
+  }
+  section {
+    padding-top: 4em;
+  }
+  nav {
+    justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles*/
+  }
+
+  header .navbar {
+    display: none; /*Ocultamos la linea horizontal del header y navegador*/
+  }
+  /*Mostrar icono hamburguesa*/
+  header .drawer {
+    display: block;
+    z-index: 2000;
+  }
+
+  nav ul li {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    border-bottom: solid 0.1rem rgb(247, 243, 243);
+  }
+  /*Al hacer check, enseña el menú vertical justo bajo el header*/
+  #ckbox:checked ~ .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(36, 60, 104);
+    display: flex;
+    flex-direction: column;
+    width: max-content; /* ajusta el ancho al contenido */
+    padding: 0.5em 1em;
+    z-index: 2000;
+  }
+  /*Estilo de cada enlace*/
+  header .navbar li a {
+    display: block;
+    color: white;
+    padding: 0.75em 1em;
+    border-bottom: 1px solid rgba(255, 160, 122, 0.3);
+  }
+  /*Dropdown para que sea clicable en movil*/
+  header .navbar li .dropdown {
+    display: block;
+    position: static;
+    background: none;
+    padding: 0;
+    margin: 0 0 0 1em;
+  }
+  .navbar li a:hover {
+    background-color: rgb(255, 160, 122);
+    color: rgb(36, 60, 104);
+  }
+
+  /*Espacio para la imagen, así no está tan pegado a las letras */
+  .contenido .imgBox {
+    margin-top: 4em;
+    margin-bottom: 3em;
+  }
   /*Que mi texto se vea más grande*/
   .aboutme .text {
-    width: 95%;      
-    margin: 2em auto;  
+    width: 95%;
+    margin: 2em auto;
     padding: 1.5em;
   }
 
   footer {
-    text-align: center;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Pone un bloque a la izquierda y otro a la derecha */
+    background-color: #222;
+    color: white;
+    padding: 1em 2em; /* Espacio interno */
   }
-}
-@media (max-width: 576px) {
-  .cv-section {
-    padding: 2em 0.5em;
+  /* Quitamos todo posicionamiento absoluto */
+  .copyright,
+  .redesSociales {
+    position: static;
+    margin: 0;
+    padding: 0;
   }
-  .cv-box {
-    padding: 1em;
-    width: 95%;
+
+  .copyright p {
+    margin: 0;
+    font-size: 0.9em;
   }
-  .cv-box .section-title {
-    font-size: 1.8em;
-    margin-bottom: 0.6em;
-  }
-  .cv-box .cv-item {
-    padding-left: 0.6em;
-    margin-bottom: 0.8em;
-  }
-  .cv-box .cv-item ul {
-    margin: 0 0 0.6em 1em;
+  /*****************************************************************************/
+  /*MEDIA QUERIES*/
+  @media (max-width: 576px) {
+    .tituloBox {
+      margin-top: 4em;
+    }
+    .cv-section {
+      padding: 2em 0.5em;
+    }
+    .cv-box {
+      padding: 1em;
+      width: 95%;
+    }
+    .cv-box .section-title {
+      font-size: 1.8em;
+      margin-bottom: 0.6em;
+    }
+    .cv-box .cv-item {
+      padding-left: 0.6em;
+      margin-bottom: 0.8em;
+    }
+    .cv-box .cv-item ul {
+      margin: 0 0 0.6em 1em;
+    }
   }
 }
