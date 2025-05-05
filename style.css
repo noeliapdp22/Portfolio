@@ -59,6 +59,21 @@ header .logo:hover{
 }
 
 
+.drawer {
+    color: var(--white-text);
+    float: left;
+    cursor: pointer;
+    display: none;
+    margin-left: 1rem;
+    border: solid 0.1rem var(--white-text);
+    padding: .2rem;
+    border-radius: .1rem;
+}
+
+#ckbox {
+    display: none;
+}
+
 header .navbar{
     position: relative;
     display: flex;
@@ -573,13 +588,9 @@ footer .redesSociales {
 .redesSociales li:hover a{
     color: rgb(255, 160, 122);
 }
+/******************************************************************************/
+/*MEDIA QUERIES*/
 
-/*Responsive for a phone*/
-@media (max-width: 992px) {
-    .tittle {
-      font-size: 3em;
-    }
-}
 
 @media (max-width: 768px){
     .formulario{
@@ -609,4 +620,44 @@ footer .redesSociales {
       }
   }
   
+  @media(max-width: 992px){
+    .tittle {
+        font-size: 3em;
+      }
+    nav{
+        justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles*/
+    }
+    .drawer{
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        background-color: var(--background);
+        top: 10vh;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+    }
+    nav ul li {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        border-bottom: solid .1rem rgb(247, 243, 243);
+    }
+    #ckbox:checked~.navbar {
+        left: 0;
+    }
+    .image {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
 
+}
