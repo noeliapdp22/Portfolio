@@ -1,637 +1,708 @@
-@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Limelight&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Limelight&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*This makes the design more controlled*/
-    font-family: "Lexend Deca", sans-serif;
-    /*border: 1px solid red;*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*This makes the design more controlled*/
+  font-family: "Lexend Deca", sans-serif;
+  /*border: 1px solid red;*/
 }
-body{
-    background-color: rgb(79, 149, 189);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 100vw;
-    overflow-x: hidden; /* Prevents horizontal scrolling when zooming */
+body {
+  background-color: rgb(79, 149, 189);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden; /* Prevents horizontal scrolling when zooming */
 }
-section{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 4em 1em;
-    flex: 1 0 auto;
-}
-
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2em 5em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(36, 60, 104);
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 4em 1em;
+  flex: 1 0 auto;
 }
 
-header .logo{
-    color: rgb(36, 60, 104);
-    font-size: 1.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-    background: rgb(255, 160, 122);
-    border-radius: 1em;
-    padding: 0 1em;
-    font-weight: 600;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(36, 60, 104);
+  z-index: 1000; 
 }
 
-header .logo:hover{
-    color: rgb(255, 160, 122);
-    background: rgb(79, 149, 189);
-    transition: 1s;
+header .logo {
+  color: rgb(36, 60, 104);
+  font-size: 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgb(255, 160, 122);
+  border-radius: 1em;
+  padding: 0 1em;
+  font-weight: 600;
 }
 
+header .logo:hover {
+  color: rgb(255, 160, 122);
+  background: rgb(79, 149, 189);
+  transition: 1s;
+}
 
 .drawer {
-    color: var(--white-text);
-    float: left;
-    cursor: pointer;
-    display: none;
-    margin-left: 1rem;
-    border: solid 0.1rem var(--white-text);
-    padding: .2rem;
-    border-radius: .1rem;
+  color: var(--white-text);
+  float: left;
+  cursor: pointer;
+  display: none;
+  margin-left: 1rem;
+  border: solid 0.1rem var(--white-text);
+  padding: 0.2rem;
+  border-radius: 0.1rem;
 }
 
 #ckbox {
-    display: none;
+  display: none;
 }
 
-header .navbar{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+header .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
-header .navbar li{
-    list-style: none;
-    margin: 0 0 0 1em;
+header .navbar li {
+  list-style: none;
+  margin: 0 0 0 1em;
 }
 
-header .navbar li a{
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 1em;
-    transition: 0.3s;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    font-family: "Lexend Deca", sans-serif;
+header .navbar li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 1em;
+  transition: 0.3s;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 header .navbar li .dropdown {
-    display: none;
-    position: absolute;
-    top: 150%;
-    left: 25%;
-    background-color: #092c4d;
-    padding: 0.7em 0;
-    z-index: 1000;
-    border-radius: 1em;
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 25%;
+  background-color: #092c4d;
+  padding: 0.7em 0;
+  z-index: 1000;
+  border-radius: 1em;
 }
 header .navbar li .dropdown li {
-    margin: 0;
+  margin: 0;
 }
 header .navbar li .dropdown li a {
-    padding: 1em 2em;
-    display: block;
-    color: white;
+  padding: 1em 2em;
+  display: block;
+  color: white;
 }
 header .navbar li:hover .dropdown {
-    display: block;
+  display: block;
 }
 
-header .navbar li a:hover{
-    border-bottom: 0.5em solid rgb(255, 160, 122);
-    padding: 0.3em;
+header .navbar li a:hover {
+  border-bottom: 0.5em solid rgb(255, 160, 122);
+  padding: 0.3em;
 }
 
 /*Contenido de la web*/
-.contenido{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
+.contenido {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
 }
 
-.contenido .tituloBox{
-    position: relative;
-    max-width: 50%;
-    text-align: center;
+.contenido .tituloBox {
+  position: relative;
+  max-width: 50%;
+  text-align: center;
 }
 
-.contenido .tituloBox h2{
-    font-size: 2.1em;
-    text-transform: uppercase;
-    color: white;
-    padding-bottom: 0.5em;
+.contenido .tituloBox h2 {
+  font-size: 2.1em;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 0.5em;
 }
 
-.contenido .tituloBox h2 span{
-    background: rgb(255, 160, 122);
-    color: rgb(36, 60, 104);
-    padding: 0 1em;
-    font-weight: 500;
-    border-radius: 2em;
-    font-size: 0.8em;
+.contenido .tituloBox h2 span {
+  background: rgb(255, 160, 122);
+  color: rgb(36, 60, 104);
+  padding: 0 1em;
+  font-weight: 500;
+  border-radius: 2em;
+  font-size: 0.8em;
 }
 
-.contenido .tituloBox p{
-    font-size: 1.3em;
-    line-height: 1.5;
-    color: white;
-    font-weight: 300;
-    margin-bottom: 3%;
-    font-family: "Lexend Deca", sans-serif;
+.contenido .tituloBox p {
+  font-size: 1.3em;
+  line-height: 1.5;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 3%;
+  font-family: "Lexend Deca", sans-serif;
 }
 
-.contenido .tituloBox a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: rgb(36, 60, 104);
-    background: rgb(255, 255, 255);
-    padding: 0.5em 0.7em;
-    margin: 2%;
-    border-radius: 1rem;
-    letter-spacing: 3%;
-    transition: 0.5s;
-    font-family: "Lexend Deca", sans-serif;
+.contenido .tituloBox a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(36, 60, 104);
+  background: rgb(255, 255, 255);
+  padding: 0.5em 0.7em;
+  margin: 2%;
+  border-radius: 1rem;
+  letter-spacing: 3%;
+  transition: 0.5s;
+  font-family: "Lexend Deca", sans-serif;
 }
 
-.contenido .tituloBox a:hover{
-    color: #fff;
-    background-color: rgb(255, 160, 122);
-    transition: 0.5s;
+.contenido .tituloBox a:hover {
+  color: #fff;
+  background-color: rgb(255, 160, 122);
+  transition: 0.5s;
 }
 
 /*Image*/
-.contenido .imgBox{
-    width: 100%;
-    max-width: 37.5em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding-right: 0em;
-    margin-top: 1%;
-    z-index: -5;
-    
+.contenido .imgBox {
+  width: 100%;
+  max-width: 37.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-right: 0em;
+  margin-top: 1%;
+  z-index: -5;
 }
 
-.contenido .imgBox img{
-    max-width: 100%;
-    height: auto;   
+.contenido .imgBox img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*Social media in home page*/
-.redesSocialesHome{
-    display: flex;
-    flex-direction: column; /*This makes the icons appear vertically*/
-    list-style: none;
-    position: absolute; 
-    top: 40%;
-    right: 3%;
+.redesSocialesHome {
+  display: flex;
+  flex-direction: column; /*This makes the icons appear vertically*/
+  list-style: none;
+  position: absolute;
+  top: 40%;
+  right: 3%;
 }
 
-.redesSocialesHome li{
-    padding: 0.2em;
+.redesSocialesHome li {
+  padding: 0.2em;
 }
 
-.redesSocialesHome li a{
-    color: #fff;
-    font-size: 2.5em;
-    transition: 0.3s;
+.redesSocialesHome li a {
+  color: #fff;
+  font-size: 2.5em;
+  transition: 0.3s;
 }
-.redesSocialesHome li:hover a{
-    color: rgb(255, 160, 122);
+.redesSocialesHome li:hover a {
+  color: rgb(255, 160, 122);
 }
 
 /*Arrow to return home*/
-.buttonHome{
-    background-color: rgb(255, 160, 122);
-    border-radius: 50%;
-    position:fixed; /*fixed- so that it is always visible*/
-    top: 90%;
-    right: 3%;
-    transform: translateY(-50%); /*This makes it always be above the other objects*/
-    width: 3.5em;
-    height: 3.5em;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+.buttonHome {
+  background-color: rgb(255, 160, 122);
+  border-radius: 50%;
+  position: fixed; /*fixed- so that it is always visible*/
+  top: 90%;
+  right: 3%;
+  transform: translateY(
+    -50%
+  ); /*This makes it always be above the other objects*/
+  width: 3.5em;
+  height: 3.5em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-.buttonHome:hover{
-    filter: invert(1);
-
+.buttonHome:hover {
+  filter: invert(1);
 }
 /*Circulo*/
-.circulo{
-    position: absolute;
-    background: rgba(2, 112, 108, 0.386);
-    clip-path: circle(30vw at right 80vh);
-    width: 100%;
-    height: 100%;
-    z-index: -1000;
+.circulo {
+  position: absolute;
+  background: rgba(2, 112, 108, 0.386);
+  clip-path: circle(30vw at right 80vh);
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
 }
 
 /*----------------------------------------------*/
 /*About me*/
-.aboutme{
-    background: linear-gradient(185deg, rgba(2, 112, 108, 0.386), rgb(79,149,189) 80%);
-    display: flex;
+.aboutme {
+  background: linear-gradient(
+    185deg,
+    rgba(2, 112, 108, 0.386),
+    rgb(79, 149, 189) 80%
+  );
+  display: flex;
 }
-.tittle{
-    font-family: "Limelight", sans-serif;
-    font-size: 3em;
-    color: #e0e0e0  ;
-    text-transform: uppercase;
-    position: relative;
+.tittle {
+  font-family: "Limelight", sans-serif;
+  font-size: 3em;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  position: relative;
 }
-.text{
-    background: #fff;
-    max-width: 800px;
-    padding: 2em;
-    margin: 5em;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    font-size: 1.1em;
-    color: rgb(36, 60, 104);
+.text {
+  background: #fff;
+  width: 90%;
+  max-width: 900px;
+  padding: 2em;
+  margin: 5em;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  color: rgb(36, 60, 104);
 }
 
 .cv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
 }
 
 .cv-boton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s;
 }
 
 .cv-circulo {
-    background-color: rgba(255, 160, 122, 0.781);
-    border-radius: 50%;
-    width: 8em;
-    height: 8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s;
+  background-color: rgba(255, 160, 122, 0.781);
+  border-radius: 50%;
+  width: 8em;
+  height: 8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
 }
 
 .cv-circulo img {
-    width: 3em;
-    height: auto;
+  width: 3em;
+  height: auto;
 }
 
 .cv-boton:hover .cv-circulo {
-    background-color: rgb(36, 60, 104);
-    transform: scale(1.05);
+  background-color: rgb(36, 60, 104);
+  transform: scale(1.05);
 }
 
 .cv-texto {
-    margin-top: 1em;
-    color: #e0e0e0 ;
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    transition: color 0.3s;
+  margin-top: 1em;
+  color: #e0e0e0;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 
 .cv-boton:hover .cv-texto {
-    color: rgba(255, 160, 122, 0.781);
+  color: rgba(255, 160, 122, 0.781);
 }
-
 
 /************************************************************************/
 /* — CV SECTION — */
 .cv-section {
-    background: linear-gradient(185deg, rgb(79,149,189), rgba(2, 112, 108, 0.386) 80%);
-    display: block;            
-    min-height: auto;         
-    padding: 4em 2em;       
-  }
-  .cv-box {
-    background-color: #fff;
-    max-width: 800px;      
-    margin: 0 auto;        
-    padding: 2em;          
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-  .section-title {
-    text-align: center;
-    margin-bottom: 1em;
-    font-family: "Limelight", sans-serif;
-    font-size: 4em;
-  }
-  .cv-item {
-    border-left: 3px solid rgb(255, 160, 122);
-    padding:1em;
-    margin: 1em;
-    font-size: 1em;
-  }
-  .cv-item ul {
-    margin: 0 0 1em 1.2em;
-    list-style: none;
+  background: linear-gradient(
+    185deg,
+    rgb(79, 149, 189),
+    rgba(2, 112, 108, 0.386) 80%
+  );
+  display: block;
+  min-height: auto;
+  padding: 4em 2em;
+}
+.cv-box {
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: "Limelight", sans-serif;
+  font-size: 4em;
+}
+.cv-item {
+  border-left: 3px solid rgb(255, 160, 122);
+  padding: 1em;
+  margin: 1em;
+  font-size: 1em;
+}
+.cv-item ul {
+  margin: 0 0 1em 1.2em;
+  list-style: none;
+}
+.cv-item ul li {
+  margin-bottom: 2em;
+}
+.cv-box .cv-item h3 {
+  margin-bottom: 0.4em;
+  font-family: "Limelight", sans-serif;
+  font-size: 2em;
+}
 
-  }
-  .cv-item ul li {
-    margin-bottom: 2em;
-  }
-  .cv-box .cv-item h3 {
-    margin-bottom: 0.4em;
-    font-family: "Limelight", sans-serif;
-    font-size: 2em;
-  }
-  
- /* SKILSS */
-  .skill-bar {
-    margin: 2em 5em;
-  }
-  .skill-bar .skill-name {
-    font-weight: 600;
-    color: rgb(36, 60, 104);
-    margin-bottom: 0.3em;
-    display: block;
-  }
-  .skill-bar .progress {
-    background: rgba(36, 60, 104, 0.2);
-    border-radius: 0.4em;
-    height: 0.8em;
-  }
-  .skill-bar .progress-fill {                       
-    height: 100%;
-    background: rgb(255, 160, 122);
-  }
-  
-  
+/* SKILSS */
+.skill-bar {
+  margin: 2em 5em;
+}
+.skill-bar .skill-name {
+  font-weight: 600;
+  color: rgb(36, 60, 104);
+  margin-bottom: 0.3em;
+  display: block;
+}
+.skill-bar .progress {
+  background: rgba(36, 60, 104, 0.2);
+  border-radius: 0.4em;
+  height: 0.8em;
+}
+.skill-bar .progress-fill {
+  height: 100%;
+  background: rgb(255, 160, 122);
+}
+
 /*-----------------------------------------------------*/
 /*Flip card Proyects*/
-.proyects{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    min-height: 10vh;
-    background: linear-gradient(180deg, rgba(2, 112, 108, 0.386), rgb(79,149,189) 90%);
+.proyects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 10vh;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 112, 108, 0.386),
+    rgb(79, 149, 189) 90%
+  );
 }
 
-.card{
-    position: relative;
-    width: 18em;
-    height: 21em;
-    margin: 20px;
+.card {
+  position: relative;
+  width: 18em;
+  height: 21em;
+  margin: 20px;
 }
-.card .face{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /*Determines whether the back face of an element is visible to the user.
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*Determines whether the back face of an element is visible to the user.
     The back face of an element is always a transparent background, allowing,
     when visible, a mirror image of the front face to be displayed.
     Has the visible property: meaning the back face is visible,
     allowing the front face to be displayed inverted.
     Hidden: meaning the back face is not visible, hiding the front face.*/
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow:hidden;
-    transition: 0.5s;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
 }
-.card .front{
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0px 5px 10px #000;
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0px 5px 10px #000;
 }
-.card .front img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /*Indicates how the content of an element should be resized to fit its container.*/
-    object-fit: cover;
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*Indicates how the content of an element should be resized to fit its container.*/
+  object-fit: cover;
 }
-.card .front h3{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    color: #fff;
-    background: #000;
-    text-align: center;
+.card .front h3 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: #000;
+  text-align: center;
 }
-.card .back{
-    transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
-    padding: 15px;
-    color: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0px 5px 10px #000;
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0px 5px 10px #000;
 }
-.card .back .link{
-    border-top: 1px solid #f3f3f3;
-    height: 50px;
-    line-height: 50px;
+.card .back .link {
+  border-top: 1px solid #f3f3f3;
+  height: 50px;
+  line-height: 50px;
 }
-.card .back .link a{
-    color: #f3f3f3;
+.card .back .link a {
+  color: #f3f3f3;
 }
-.card .back h3{
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-    
-} 
-.card .back p{
-    letter-spacing: 1px;
-
+.card .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
 }
-.card:hover .front{
-    transform: perspective(600px)rotateY(180deg);
+.card .back p {
+  letter-spacing: 1px;
 }
-.card:hover .back{
-    transform: perspective(600px)rotateY(360deg);
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
 }
 /*-------------------------------------------------------*/
 /*Survey form, contact me*/
-.survey-form{
-    box-sizing: border-box;
-    margin: 0;
-    /*background*/
+.survey-form {
+  box-sizing: border-box;
+  margin: 0;
+  /*background*/
 }
 
-.survey-form h1{
-    font-family: "Limelight", sans-serif;
-    padding-top: 20px;
-    text-align: center;
-    color: rgb(36, 60, 104);
-    font-size: 48px;
-    text-transform: uppercase;
+.survey-form h1 {
+  font-family: "Limelight", sans-serif;
+  padding-top: 20px;
+  text-align: center;
+  color: rgb(36, 60, 104);
+  font-size: 48px;
+  text-transform: uppercase;
 }
-.contenedor{
-    width: 100%;
-    padding: 15px;
+.contenedor {
+  width: 100%;
+  padding: 15px;
 }
-.formulario{
-    max-width: 400px;      
-    margin: 0 auto;       
-    background: #fff;
-    padding: 2em;
-    border-radius: 8px;
+.formulario {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
 }
 
-input[type="text"], input[type="email"]{
-    text-align: center;
-    font-size: 24px;
-    width: 80%;
-    padding: 10px;
-    border: none;
+input[type="text"],
+input[type="email"] {
+  text-align: center;
+  font-size: 24px;
+  width: 80%;
+  padding: 10px;
+  border: none;
 }
-.input-contenedor{
-    margin-bottom: 15px;
-    border: 2px solid rgb(211, 131, 99);
-    margin-bottom: 1em;
+.input-contenedor {
+  margin-bottom: 15px;
+  border: 2px solid rgb(211, 131, 99);
+  margin-bottom: 1em;
 }
- 
-.button{
-    border: none;
-    width: 100%;
-    font-size: 24px;
-    color: white;
-    background-color: rgb(211, 131, 99);
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+
+.button {
+  border: none;
+  width: 100%;
+  font-size: 24px;
+  color: white;
+  background-color: rgb(211, 131, 99);
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.button:hover{
-    background-color:rgb(36, 60, 104);
-    color: rgb(245, 151, 113);
+.button:hover {
+  background-color: rgb(36, 60, 104);
+  color: rgb(245, 151, 113);
 }
 
 /*Footer*/
 footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 35px;
-    position: relative;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 35px;
+  position: relative;
 }
 
 footer .redesSociales {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    list-style: none;
-    padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  padding-right: 10px;
 }
 /*Copyright*/
-.copyright{
-    position: absolute;
-    bottom: 0px;
-    left: 400px;
-    margin-bottom: auto;
-    padding: 0 100px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Limelight", sans-serif;
+.copyright {
+  bottom: 0px;
+  position: static;
+  margin: 0.5em 0; 
+  margin-bottom: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Limelight", sans-serif;
 }
 
-.copyright p{
-    color: white;
-    text-align: center;
-    margin-left: 100px;
+.copyright p {
+  color: white;
+  text-align: center;
+  margin-left: 100px;
 }
 
 /*Social media*/
 
-.redesSociales{
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+.redesSociales {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
 }
 
-.redesSociales li{
-    padding: 10px;
+.redesSociales li {
+  padding: 10px;
 }
 
-.redesSociales li a{
-    color: #fff;
-    font-size: 2.5em;
-    transition: 0.3s;
+.redesSociales li a {
+  color: #fff;
+  font-size: 2.5em;
+  transition: 0.3s;
 }
-.redesSociales li:hover a{
-    color: rgb(255, 160, 122);
+.redesSociales li:hover a {
+  color: rgb(255, 160, 122);
 }
 /******************************************************************************/
+/*MEDIA QUERIES*/
+
+@media (max-width: 1120px) {
+}
 @media (max-width: 992px) {
-    /* 1) Ocultar la nav original */
-    header .navbar {
-      display: none;
-    }
-    /* 2) Mostrar siempre el icono hamburguesa */
-    header .drawer {
-      display: block;
-      z-index: 2000;
-    }
-    /* 3) Al marcar el checkbox, desplegar la nav justo debajo del header */
-    #ckbox:checked ~ .navbar {
-      display: flex;
-      flex-direction: column;
-      position: absolute;     /* relativo al header */
-      top: 100%;              /* justo al borde inferior del header */
-      left: 0;
-      width: 100%;
-      height: auto;           /* que se adapte al número de enlaces */
-      background-color: rgb(36, 60, 104);
-      padding: 0.5em 0;
-      z-index: 1500;
-    }
-    /* 4) Estilos de cada enlace */
-    header .navbar li a {
-      display: block;
-      padding: 0.75em 1em;
-      color: white;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 160, 122, 0.3);
-    }
-    /* 5) Ocultar el submenú (dropdown) en móvil */
-    header .navbar li .dropdown {
-      display: none !important;
-    }
-    /* 6) Opcional: ocultar el logo mientras el menú está abierto */
-    #ckbox:checked ~ .logo {
-      visibility: hidden;
-    }
+  .tittle {
+    font-size: 3em;
   }
-  
+  /*Espacio de las letras con el header*/
+  .contenido {
+    padding-top: 5em; 
+  }
+  section{
+    padding-top: 4em;
+  }
+  nav {
+    justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles*/
+  }
+  /*Mostrar icono hamburguesa*/
+  header .navbar{
+    display: none; /*Ocultamos la linea horizontal del header y navegador*/
+  }
+   header .drawer {
+    display: block;
+    z-index: 2000;
+  }
+
+  nav ul li {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    border-bottom: solid 0.1rem rgb(247, 243, 243);
+  }
+  /*Al hacer check, enseña el menú vertical justo bajo el header*/
+  #ckbox:checked ~ .navbar {
+    left: 0;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: rgb(36,60,104);
+    padding: 1em 0;
+    z-index: 2000;
+  }
+  /*Estilo de cada enlace*/
+  header .navbar li a{
+    display: block;
+    color: white;
+    padding: 0.75em 1em;
+    border-bottom: 1px solid rgba(255,160,122,0.3);
+  }
+    /*Dropdown para que sea clicable en movil*/
+  header .navbar li .dropdown {
+    display: block;
+    position: static;
+    background: none;
+    padding: 0;
+    margin: 0 0 0 1em;
+  }
+  .navbar li a:hover {
+    background-color: rgb(255, 160, 122); 
+    color: rgb(36, 60, 104);              
+  }
+
+  /*Espacio para la imagen, así no está tan pegado a las letras */
+  .contenido .imgBox {
+    margin-top: 4em;
+    margin-bottom: 3em;
+  } 
+  /*Que mi texto se vea más grande*/
+  .aboutme .text {
+    width: 95%;      
+    margin: 2em auto;  
+    padding: 1.5em;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .cv-section {
+    padding: 2em 0.5em;
+  }
+  .cv-box {
+    padding: 1em;
+    width: 95%;
+  }
+  .cv-box .section-title {
+    font-size: 1.8em;
+    margin-bottom: 0.6em;
+  }
+  .cv-box .cv-item {
+    padding-left: 0.6em;
+    margin-bottom: 0.8em;
+  }
+  .cv-box .cv-item ul {
+    margin: 0 0 0.6em 1em;
+  }
+}
