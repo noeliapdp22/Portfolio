@@ -24,7 +24,7 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 7em 2em;
+    padding: 4em 1em;
     flex: 1 0 auto;
 }
 
@@ -130,7 +130,7 @@ header .navbar li a:hover{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 2em;
 }
 
 .contenido .tituloBox{
@@ -245,7 +245,6 @@ header .navbar li a:hover{
 /*Circulo*/
 .circulo{
     position: absolute;
-    
     background: rgba(2, 112, 108, 0.386);
     clip-path: circle(30vw at right 80vh);
     width: 100%;
@@ -256,30 +255,27 @@ header .navbar li a:hover{
 /*----------------------------------------------*/
 /*About me*/
 .aboutme{
-    background-color: rgba(2, 112, 108, 0.386);
+    background: linear-gradient(185deg, rgba(2, 112, 108, 0.386), rgb(79,149,189) 80%);
+    display: flex;
 }
 .tittle{
     font-family: "Limelight", sans-serif;
+    font-size: 3em;
+    color: #e0e0e0  ;
     text-transform: uppercase;
     position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 2em;
-    font-size: 5em;
 }
 .text{
-    background-color: #fff;
-    border-radius: 0px 20px 20px;
-    padding: 0.8em;
-    margin: 1em;
-    font-size: 1.5em;
-    position: relative;
-    display: inline-block;
-    
+    background: #fff;
+    max-width: 800px;
+    padding: 2em;
+    margin: 5em;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    color: rgb(36, 60, 104);
 }
+
 .cv {
     display: flex;
     justify-content: center;
@@ -319,7 +315,7 @@ header .navbar li a:hover{
 
 .cv-texto {
     margin-top: 1em;
-    color: rgb(36, 60, 104);
+    color: #e0e0e0 ;
     font-family: "Lexend Deca", sans-serif;
     font-weight: bold;
     font-size: 1.2em;
@@ -332,19 +328,10 @@ header .navbar li a:hover{
 }
 
 
-/*Circle*/
-.circulo2{
-    position: absolute;
-    background: rgba(255, 160, 122, 0.781);
-    clip-path: circle(30vw at left 100vh);
-    width: 100%;
-    height: 100%;
-    z-index: -1000; /*Being negative, it sends it behind the objects*/
-}
 /************************************************************************/
 /* — CV SECTION — */
 .cv-section {
-    background-color: rgba(2, 112, 108, 0.386);
+    background: linear-gradient(185deg, rgb(79,149,189), rgba(2, 112, 108, 0.386) 80%);
     display: block;            
     min-height: auto;         
     padding: 4em 2em;       
@@ -412,7 +399,7 @@ header .navbar li a:hover{
     align-items: center;
     justify-content: center;
     min-height: 10vh;
-    background: #092c4d;
+    background: linear-gradient(180deg, rgba(2, 112, 108, 0.386), rgb(79,149,189) 90%);
 }
 
 .card{
@@ -511,11 +498,13 @@ header .navbar li a:hover{
 .contenedor{
     width: 100%;
     padding: 15px;
-
 }
 .formulario{
+    max-width: 400px;      
+    margin: 0 auto;       
     background: #fff;
-    margin-top: 100px;
+    padding: 2em;
+    border-radius: 8px;
 }
 
 input[type="text"], input[type="email"]{
@@ -528,7 +517,9 @@ input[type="text"], input[type="email"]{
 .input-contenedor{
     margin-bottom: 15px;
     border: 2px solid rgb(211, 131, 99);
+    margin-bottom: 1em;
 }
+ 
 .button{
     border: none;
     width: 100%;
@@ -603,67 +594,44 @@ footer .redesSociales {
     color: rgb(255, 160, 122);
 }
 /******************************************************************************/
-/*MEDIA QUERIES*/
-@media (max-width: 576px) {
-    .cv-section {
-      padding: 2em 0.5em;
+@media (max-width: 992px) {
+    /* 1) Ocultar la nav original */
+    header .navbar {
+      display: none;
     }
-    .cv-box {
-      padding: 1em;
-      width: 95%;
+    /* 2) Mostrar siempre el icono hamburguesa */
+    header .drawer {
+      display: block;
+      z-index: 2000;
     }
-    .cv-box .section-title {
-      font-size: 1.8em;
-      margin-bottom: 0.6em;
+    /* 3) Al marcar el checkbox, desplegar la nav justo debajo del header */
+    #ckbox:checked ~ .navbar {
+      display: flex;
+      flex-direction: column;
+      position: absolute;     /* relativo al header */
+      top: 100%;              /* justo al borde inferior del header */
+      left: 0;
+      width: 100%;
+      height: auto;           /* que se adapte al número de enlaces */
+      background-color: rgb(36, 60, 104);
+      padding: 0.5em 0;
+      z-index: 1500;
     }
-    .cv-box .cv-item {
-      padding-left: 0.6em;
-      margin-bottom: 0.8em;
+    /* 4) Estilos de cada enlace */
+    header .navbar li a {
+      display: block;
+      padding: 0.75em 1em;
+      color: white;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 160, 122, 0.3);
     }
-    .cv-box .cv-item ul {
-      margin: 0 0 0.6em 1em;
+    /* 5) Ocultar el submenú (dropdown) en móvil */
+    header .navbar li .dropdown {
+      display: none !important;
+    }
+    /* 6) Opcional: ocultar el logo mientras el menú está abierto */
+    #ckbox:checked ~ .logo {
+      visibility: hidden;
     }
   }
   
-  /*
-  @media(max-width: 992px){
-    .tittle {
-        font-size: 3em;
-      }
-    nav{
-        justify-content: flex-start; /*Jutificame todo el contenido, y me vas a inicializar con las propiedades flexibles
-    }
-    .drawer{
-        display: block;
-    }
-    ul {
-        position: fixed;
-        width: 50%;
-        height: 100vh;
-        background-color: var(--background);
-        top: 10vh;
-        left: -100%;
-        text-align: left;
-        transition: all .5s;
-        display: flex;
-        flex-direction: column;
-        align-content: stretch;
-    }
-    nav ul li {
-        padding: 1rem 0;
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-        border-bottom: solid .1rem rgb(247, 243, 243);
-    }
-    #ckbox:checked~.navbar {
-        left: 0;
-    }
-    .image {
-        display: none;
-    }
-    footer {
-        text-align: center;
-    }
-} */
-
